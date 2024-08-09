@@ -1,4 +1,9 @@
+#!/usr/bin/python3
+"""Pascal triangle problem
+"""
+
 def pascal_triangle(n):
+    """Pascal triangle solution with t: O(n^2)"""
     if (n <= 0):
         return []
     result = [[1]]
