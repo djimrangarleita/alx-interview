@@ -31,18 +31,18 @@ def print_status(status: dict):
 
 
 try:
-    for line in sys.stdin:
+    while True:
+        line = sys.stdin.readline()
         line_count += 1
         splitted_line = line.strip().split()
-        if len(splitted_line) == 9:
+        if len(splitted_line) >= 7 and len(splitted_line) <= 9:
             update_stats(splitted_line[-1], splitted_line[-2])
-        if line_count == 10:
+        if not line or line_count == 10:
             print("File size: {}".format(files_size))
             print_status(status)
             line_count = 0
-    if line_count % 10 != 0:
-        print("File size: {}".format(files_size))
-        print_status(status)
+            if not line:
+                break
 except KeyboardInterrupt:
     print("File size: {}".format(files_size))
     print_status(status)
