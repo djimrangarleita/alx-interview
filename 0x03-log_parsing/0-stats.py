@@ -40,6 +40,9 @@ try:
             print("File size: {}".format(files_size))
             print_status(status)
             line_count = 0
+    if line_count % 10 != 0:
+        print("File size: {}".format(files_size))
+        print_status(status)
 except KeyboardInterrupt:
     print("File size: {}".format(files_size))
     print_status(status)
