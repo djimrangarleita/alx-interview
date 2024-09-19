@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""Module to solve the coin change problem
-"""
+"""Coin change problem"""
 
 
 def makeChange(coins, total):
-    """Return the minimum num of coins used to make total"""
+    """Return the min num of coins used to make total"""
     if total <= 0:
         return 0
     if not coins:
