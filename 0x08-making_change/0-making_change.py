@@ -7,9 +7,9 @@ def makeChange(coins, total):
     """Return the minimum num of coins used to make total"""
     if total <= 0:
         return 0
+    t = time.perf_counter()
     result = [total + 1] * (total + 1)
     result[0] = 0
-    coins.sort(reverse=True)
     for i in range(total + 1):
         for coin in coins:
             if coin > i:
