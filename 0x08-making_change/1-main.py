@@ -18,6 +18,8 @@ end = time.time()
 
 avg = (end - start) / 10
 
+print("Average time is {}".format(avg))
+
 if avg > 3:
     print("Runtime too long")
 else:
