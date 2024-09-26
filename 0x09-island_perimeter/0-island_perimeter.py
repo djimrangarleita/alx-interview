@@ -9,7 +9,7 @@ def island_perimeter(grid):
     if not grid:
         return 0
     for i in range(len(grid)):
-        for j in range(len(grid[0])):
+        for j in range(len(grid[i])):
             if grid[i][j] == 1:
                 cell_perimeter = abs(grid[i - 1][j] - 1)\
                         + abs(grid[i][j - 1] - 1)\
