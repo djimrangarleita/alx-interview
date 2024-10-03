@@ -8,10 +8,11 @@ def sieve_of_eratosthenes(n):
     primes = [True] * (n + 1)
     primes[0], primes[1] = False, False
     for i in range(2, int(n**0.5) + 1):
-        if primes[i] == True:
+        if primes[i]:
             for j in range(i * i, n + 1, i):
                 primes[j] = False
     return primes
+
 
 def count_number_of_primes(max_n):
     """Count the number of possible primes"""
@@ -43,6 +44,7 @@ def play_game(xround, nums):
         else:
             result['Maria'] = result.get('Maria') + 1
     return result
+
 
 def isWinner(x, nums):
     """Game winner"""
