@@ -23,19 +23,10 @@ def count_number_of_primes(max_n):
     return primes_count
 
 
-def get_relevent_sublist(xround, nums):
-    """Recursively build the sublist of test cases"""
-    sublist = nums[:min(xround, len(nums))]
-    if xround > len(sublist):
-        sublist += nums
-        return get_relevent_sublist(xround, sublist)
-    return sublist
-
-
 def play_game(xround, nums):
     """Play game accoring to xround"""
-    max_n = max(nums[:max(xround, len(nums))])
-    sublist = get_relevent_sublist(xround, nums)
+    sublist = nums[:min(xround, len(nums))]
+    max_n = max(sublist)
     primes_count = count_number_of_primes(max_n)
     result = {'Ben': 0, 'Maria': 0}
     for n in sublist:
@@ -49,5 +40,7 @@ def play_game(xround, nums):
 def isWinner(x, nums):
     """Game winner"""
     result = play_game(x, nums)
+    if result.get('Ben') == result.get('Maria'):
+        return None
     winner = max(result, key=result.get)
     return winner
