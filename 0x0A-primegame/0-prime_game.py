@@ -39,6 +39,8 @@ def play_game(xround, nums):
 
 def isWinner(x, nums):
     """Game winner"""
+    if not nums:
+        return None
     result = play_game(x, nums)
     if result.get('Ben') == result.get('Maria'):
         return None
