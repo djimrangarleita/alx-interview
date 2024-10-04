@@ -34,10 +34,12 @@ def get_relevent_sublist(xround, nums):
 
 def play_game(xround, nums):
     """Play game accoring to xround"""
+    result = {'Ben': 0, 'Maria': 0}
     max_n = max(nums[:max(xround, len(nums))])
+    if max_n == 0:
+        return {'Ben': 1, 'Maria': 0}
     sublist = get_relevent_sublist(xround, nums)
     primes_count = count_number_of_primes(max_n)
-    result = {'Ben': 0, 'Maria': 0}
     for n in sublist:
         if primes_count[n] % 2 == 0:
             result['Ben'] = result.get('Ben') + 1
